@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <link rel="canonical" href="https://weather-pwa-sample.firebaseapp.com/final/">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Showtimes</title>
+  <link rel="stylesheet" type="text/css" href="style/style.css">
+  <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/multiple-select/1.2.0/multiple-select.css">
+  <!-- TODO add manifest here -->
+  <link rel="manifest" href="/manifest.json">
+  <!-- Add to home screen for Safari on iOS -->
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="black">
+  <meta name="apple-mobile-web-app-title" content="Show Times">
+  <link rel="apple-touch-icon" href="images/icons/icon-152x152.png">
+  <meta name="msapplication-TileImage" content="images/icons/icon-144x144.png">
+  <meta name="msapplication-TileColor" content="#2F3BA2">
+</head>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js" type="text/javascript">
+</script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.js" type="text/javascript">
+
+</script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/multiple-select/1.2.0/multiple-select.js"></script>
+
+<script src="../Showtime App/scripts/movies.js" async></script>
+<body class="body">
+
+  <header class="header">
+    <h2 class="header__title">Showtimes at Movies @DUNDRUM </h2>
+
+  </header>
+
+<div class="content bookingPage" id="booking">
+  <span> Select your seats </span>
+<div class="movieTitle">
+<img style="width:80px;height:100px"></img>
+</div>
+<div class="bookingPage">
+  <div class="movieContent">
+    <div><span rel="" id="bookingTitle"></span></div>
+    <div><span rel="" id="bookingDay"></span>   <span rel="" id="bookingTime"></span></div>
+    <div><span id="bookingScreen">Showing in Screen 06 - MOVIES @DUNDRUM</span></div>
+    <div><span id="bookingRunTime">Run Time: 90</span></div>
+  </div>
+  <div class="NoOfSeats">
+    <select id="seatcount">
+      <option value="Default">select no of seats.</option>
+      <option value="1">1</option>
+      <option value="2">2</option>
+      <option value="3">3</option>
+      <option value="3">4</option>
+      <option value="5">5</option>
+    </select>
+  </div>
+  <div class="bookingSeats" style="display:none">
+    <div>
+      <p> Select your seats from aviailable seats.
+        Green represents available seats, red represents
+      seats unavaialble and yellow represents the your selection. </p>
+    </div>
+    <div class="screen">
+      Screen 06
+    </div>
+    <div class="center">
+      <div class="row1">
+        <div class="seat" data-row="1A" data-col="1A">1A</div>
+        <div class="seat" data-row="1B" data-col="1B">1B</div>
+        <div class="seat" data-row="1C" data-col="1C">1C</div>
+        <div class="empty"></div>
+        <div class="seat reserved" data-row="1D" data-col="1D">1D</div>
+        <div class="seat reserved" data-row="1E" data-col="1E">1E</div>
+      </div>
+      <div class="row2">
+        <div class="seat" data-row="2A" data-col="2A">2A</div>
+        <div class="seat" data-row="2B" data-col="2B">2B</div>
+        <div class="seat" data-row="2C" data-col="2C">2C</div>
+        <div class="empty"></div>
+        <div class="seat" data-row="2D" data-col="2D">2D</div>
+        <div class="seat" data-row="2E" data-col="2E">2E</div>
+      </div>
+      <div class="row3">
+        <div class="seat" data-row="3A" data-col="3A">3A</div>
+        <div class="seat reserved" data-row="3B" data-col="3B">3B</div>
+        <div class="seat reserved" data-row="3C" data-col="3C">3C</div>
+        <div class="empty"></div>
+        <div class="seat" data-row="3D" data-col="3D">3D</div>
+        <div class="seat" data-row="3E" data-col="3E">3E</div>
+      </div>
+      <div class="row4">
+        <div class="seat" data-row="4A" data-col="4A">4A</div>
+        <div class="seat" data-row="4B" data-col="4B">4B</div>
+        <div class="seat" data-row="4C" data-col="4C">4C</div>
+        <div class="seat" data-row="4D" data-col="4D">4D</div>
+        <div class="seat" data-row="4E" data-col="4E">4E</div>
+        <div class="seat reserved" data-row="4F" data-col="4F">4F</div>
+        <div class="seat" data-row="4G" data-col="4G">4G</div>
+      </div>
+        </div>
+        <div class="comboList" style="display: inline-flex;">
+          <div id="comboList" style="width: 90%;"><label> Snack Box: </label>
+            <input type="checkbox" name="" value="20"/>coke-popcorn @20</br>
+            <input type="checkbox" name="" value="15"/>coke-water @15</br>
+            <input type="checkbox" name="" value="10">Big Popcorn @10</br>
+            <input type="checkbox" name="" value="10">Fries @10</br>
+            <input type="checkbox" name="" value="10">Cookies @10</br>
+            <input type="checkbox" name="" value="20">Burger @20</br>
+            <input type="checkbox" name="" value="35">Burger Combo @35</br>
+          </div>
+          <div class="chooseSeats">
+            <div style="    margin-top: 20px;"><span> Price </span> <span id="total"> </span> </div> </br>
+            <button class="button" type="button" name="button" onclick="getUserDetails()"> Checkout </button>
+          </div>
+        </div>
+
+    </div>
+
+
+</div>
+
+</div>
+</html>

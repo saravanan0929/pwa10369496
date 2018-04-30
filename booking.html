@@ -6,7 +6,7 @@
   <link rel="canonical" href="https://weather-pwa-sample.firebaseapp.com/final/">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Showtimes</title>
-  <link rel="stylesheet" type="text/css" href="style/style.css">
+  <link rel="stylesheet" type="text/css" href="styles/style.css">
   <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/multiple-select/1.2.0/multiple-select.css">
   <!-- TODO add manifest here -->
   <link rel="manifest" href="/manifest.json">
@@ -25,36 +25,38 @@
 </script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/multiple-select/1.2.0/multiple-select.js"></script>
 
-<script src="../Showtime App/scripts/movies.js" async></script>
+<script src="../Trail/js/movies.js" async></script>
 <body class="body">
 
   <header class="header">
-    <h2 class="header__title">Showtimes at Movies @DUNDRUM </h2>
-
+    <h2 class="header__title">Showtimes at Dundrum Mall </h2>
+    <h4 class="header__title"> Booking Movie Made Easy  </h4>
   </header>
 
 <div class="content bookingPage" id="booking">
-  <span> Select your seats </span>
 <div class="movieTitle">
-<img style="width:80px;height:100px"></img>
+  <div class="job-item section-before bg-image" style="background-image: url(images/1.jpg);"></div>
+<img class="job-item section-before bg-image" src="/Trail/images/1.jpg"></img>
 </div>
 <div class="bookingPage">
   <div class="movieContent">
     <div><span rel="" id="bookingTitle"></span></div>
-    <div><span rel="" id="bookingDay"></span>   <span rel="" id="bookingTime"></span></div>
-    <div><span id="bookingScreen">Showing in Screen 06 - MOVIES @DUNDRUM</span></div>
+    <div><span rel="" id="bookingDay"></span>
+    <span rel="" id="bookingTime"></span></div>
+    <div><span id="bookingScreen">Showing in Screen 06</span></div>
     <div><span id="bookingRunTime">Run Time: 90</span></div>
+    <div class="NoOfSeats">
+      <select id="seatcount">
+        <option value="Default">select no of seats.</option>
+        <option value="1">1</option>
+        <option value="2">2</option>
+        <option value="3">3</option>
+        <option value="3">4</option>
+        <option value="5">5</option>
+      </select>
+    </div>
   </div>
-  <div class="NoOfSeats">
-    <select id="seatcount">
-      <option value="Default">select no of seats.</option>
-      <option value="1">1</option>
-      <option value="2">2</option>
-      <option value="3">3</option>
-      <option value="3">4</option>
-      <option value="5">5</option>
-    </select>
-  </div>
+
   <div class="bookingSeats" style="display:none">
     <div>
       <p> Select your seats from aviailable seats.

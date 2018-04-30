@@ -62,7 +62,7 @@ function getUserDetails(){
   if(seatArr.length > 0){
     localStorage.setItem("movieData",JSON.stringify(movData));
     console.log(localStorage.getItem("movieData"));
-    window.location.href = "../Showtime App/userDetails.html";
+    window.location.href = "../Trail/userDetails.html";
   }else{
     alert("Please select seats");
   }
